@@ -58,7 +58,9 @@ function Totaux() {
 
       <h2>Total</h2>
 
-      <div>{parseInt(state.total) + ' €'}</div>
+      <div style={{ fontWeight: 'bold', fontSize: '40px' }}>
+        {parseInt(state.total) + ' €'}
+      </div>
     </>
   );
 }

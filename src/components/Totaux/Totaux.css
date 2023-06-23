@@ -1,40 +1,85 @@
 .subTotals {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
-.subTotals div {
+.subTotals > div {
   display: flex;
   flex-direction: column;
-  border: 2px solid;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+  padding: 4px;
+}
+
+.subTotals h3 {
+  margin: 0;
+  padding: 6px;
   border-radius: 5px;
 }
 
+.subTotals p {
+  margin: 0;
+}
+
+.subTotals div {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 2px;
+}
+
 .alimentation {
-  background-color: tomato;
+  border-color: tomato;
 }
 
 .logement {
-  background-color: #429441;
+  border-color: #429441;
 }
 
 .transport {
-  background-color: #8f4517;
+  border-color: #8f4517;
 }
 
 .divertissement {
-  background-color: #fcb749;
+  border-color: #fcb749;
 }
 
 .santé {
-  background-color: #5a7bb8;
+  border-color: #5a7bb8;
 }
 
 .éducation {
-  background-color: #d9893f;
+  border-color: #d9893f;
 }
 
 .autres {
+  border-color: #b980ff;
+}
+
+.alimentation h3 {
+  background-color: tomato;
+}
+
+.logement h3 {
+  background-color: #429441;
+}
+
+.transport h3 {
+  background-color: #8f4517;
+}
+
+.divertissement h3 {
+  background-color: #fcb749;
+}
+
+.santé h3 {
+  background-color: #5a7bb8;
+}
+
+.éducation h3 {
+  background-color: #d9893f;
+}
+
+.autres h3 {
   background-color: #b980ff;
 }

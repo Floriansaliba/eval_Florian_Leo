@@ -44,7 +44,7 @@ function Item({ value }) {
       <p
         style={{
           background: handleColor(),
-          padding: '2px',
+          padding: '6px',
           borderRadius: '5px',
         }}
       >
@@ -60,6 +60,15 @@ function Item({ value }) {
           alignItems: 'center',
           width: '40px',
           height: '40px',
+          transition: 'background-color 0.3s, color 0.3s',
+        }}
+        onMouseOver={(e) => {
+          e.target.style.backgroundColor = 'white';
+          e.target.style.color = '#e63900';
+        }}
+        onMouseOut={(e) => {
+          e.target.style.backgroundColor = '#e63900';
+          e.target.style.color = 'white';
         }}
       >
         X

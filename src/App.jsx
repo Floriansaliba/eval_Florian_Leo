@@ -6,6 +6,7 @@ import Totaux from './components/Totaux/Totaux';
 function App() {
   return (
     <>
+      <h1>Mes dépenses</h1>
       <Inputs />
       <List />
       <Totaux />

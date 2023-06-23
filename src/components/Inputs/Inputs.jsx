@@ -1,14 +1,31 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ListContext } from '../../utils';
 import './style.css';
 
 function Inputs() {
   const [state, dispatch] = useContext(ListContext);
 
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handleChange = (event) => {
     const { value, name } = event.target;
     dispatch({ type: name, payload: value });
     console.log('ok');
+  };
+
+  const handleClick = () => {
+    setErrorMessage('');
+    const title = state.item.title;
+    const amount = state.item.amount;
+    if (title === '') {
+      setErrorMessage('Veuillez entrer le titre de votre dépense');
+      return;
+    } else if (amount === 0) {
+      setErrorMessage('Veuillez entrer un montant supérieur à 0');
+      return;
+    } else {
+      dispatch({ type: 'AddItem' });
+    }
   };
 
   return (
@@ -46,13 +63,24 @@ function Inputs() {
           <option value='Autres'>Autres</option>
         </select>
         <button
-          onClick={() => {
-            dispatch({ type: 'AddItem' });
+          onClick={handleClick}
+          style={{
+            background: '#035B7B',
+            transition: 'background-color 0.3s, color 0.3s',
           }}
-          style={{ background: '#035B7B' }}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = 'white';
+            e.target.style.color = '#035B7B';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = '#035B7B';
+            e.target.style.color = 'white';
+          }}
         >
           Ajouter dépense
         </button>
+        <br />
+        <p style={{ color: 'red' }}>{errorMessage}</p>
       </div>
     </>
   );
