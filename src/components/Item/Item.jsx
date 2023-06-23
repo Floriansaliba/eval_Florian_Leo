@@ -7,21 +7,21 @@ function Item({ value }) {
   const handleColor = () => {
     switch (value.category) {
       case 'Alimentation':
-        return 'red';
+        return 'tomato';
       case 'Logement':
-        return 'blue';
+        return '#429441';
       case 'Transport':
-        return 'yellow';
+        return '#8f4517';
       case 'Divertissement':
-        return 'green';
+        return '#FCB749';
       case 'Santé':
-        return 'purple';
+        return '#5a7bb8';
       case 'Autres':
-        return 'brown';
-      case 'Éducation':
-        return 'pink';
+        return '#B980FF';
+      case 'Education':
+        return '#d9893f';
       default:
-        return 'blue';
+        return 'red';
     }
   };
 
@@ -31,9 +31,15 @@ function Item({ value }) {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+        border: 'solid 1px',
+        borderRadius: '20px',
+        marginTop: '10px',
+        paddingRight: '10px',
+        paddingLeft: '10px',
       }}
     >
-      <p>{value.title}</p>
+      <p style={{ fontWeight: 'bold', fontSize: '20px' }}>{value.title}</p>
       <p>{parseInt(value.amount) + ' €'}</p>
       <p
         style={{
@@ -44,7 +50,18 @@ function Item({ value }) {
       >
         {value.category}
       </p>
-      <button onClick={() => dispatch({ type: 'RemoveItem', payload: value })}>
+      <button
+        onClick={() => dispatch({ type: 'RemoveItem', payload: value })}
+        style={{
+          backgroundColor: '#e63900',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '40px',
+          height: '40px',
+        }}
+      >
         X
       </button>
     </li>

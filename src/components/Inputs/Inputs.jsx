@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { ListContext } from '../../utils';
+import './style.css';
 
 function Inputs() {
   const [state, dispatch] = useContext(ListContext);
@@ -10,14 +11,11 @@ function Inputs() {
     console.log('ok');
   };
 
-  //   const handleSelect = (event) => {
-  //     dispatch({ type: 'ChangeCategory', payload: event.target.value });
-  //   };
-
   return (
     <>
       <div className='inputs'>
         <input
+          className='inputText'
           type='number'
           name='ChangeAmount'
           value={state.item.amount}
@@ -25,6 +23,7 @@ function Inputs() {
           onChange={handleChange}
         />
         <input
+          className='inputText'
           type='text'
           name='ChangeTitle'
           value={state.item.title}
@@ -32,6 +31,7 @@ function Inputs() {
           onChange={handleChange}
         />
         <select
+          className='inputText'
           name='ChangeCategory'
           id='category'
           value={state.item.category}
@@ -49,6 +49,7 @@ function Inputs() {
           onClick={() => {
             dispatch({ type: 'AddItem' });
           }}
+          style={{ background: '#035B7B' }}
         >
           Ajouter dépense
         </button>

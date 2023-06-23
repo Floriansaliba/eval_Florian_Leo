@@ -1,0 +1,40 @@
+.subTotals {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.subTotals div {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+.alimentation {
+  background-color: tomato;
+}
+
+.logement {
+  background-color: #429441;
+}
+
+.transport {
+  background-color: #8f4517;
+}
+
+.divertissement {
+  background-color: #fcb749;
+}
+
+.santé {
+  background-color: #5a7bb8;
+}
+
+.éducation {
+  background-color: #d9893f;
+}
+
+.autres {
+  background-color: #b980ff;
+}
